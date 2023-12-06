@@ -132,7 +132,7 @@ export default function Home() {
               <DragAndDrop transformImageToCode={transformImageToCode} />
               <h1 className="text-center text-4xl my-4 text-gray-500">OR</h1>
               <Form transformUrlToCode={transformUrlToCode} />
-              <h1 className="text-sm text-gray-400">If is not working, it's probably because my account doesn't have credits to use the openai api.</h1>
+              <h1 className="text-sm text-gray-400">If is not working, it&apos;s probably because my account doesn&apos;t have credits to use the openai api.</h1>
             </div>
           )}
           {step === STEPS.PREVIEW && (
