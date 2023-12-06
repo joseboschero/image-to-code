@@ -4,6 +4,10 @@ import { Divide } from "lucide-react";
 import Form from "./form";
 import { useState } from "react";
 import { DragAndDrop } from "./draganddrop";
+import Image from "next/image";
+import ArrowIcon from "@/public/arrow-icon.svg"
+import ImageIcon from "@/public/image-icon.svg"
+import CodeIcon from "@/public/code-icon.svg"
 
 const STEPS = {
   INITIAL: "INITIAL",
@@ -80,21 +84,27 @@ export default function Home() {
 
   return (
     <div className="grid grid-cols-[400px_1fr]">
-      <aside className="flex flex-col justify-between min-h-screen p-4 bg-gray-900">
+      <aside className="flex flex-col justify-between min-h-screen p-4 bg-gray-950">
         <header className="text-center">
           <h1 className="text-3xl font-semibold">Image 2 Code</h1>
           <h2 className="text-sm opacity-75">
             Convert your image to code in seconds.
           </h2>
+          <div className="flex items-center justify-center opacity-90">
+            <Image src={ImageIcon} width={50} height={50} alt={`image-image`}/>
+            <Image src={ArrowIcon} width={30} height={30} alt={`arrow-image`}/>
+            <Image src={CodeIcon} width={50} height={50} alt={`code-image`}/>
+          </div>
         </header>
 
-        <section></section>
+        <section>
+        </section>
 
         <footer className="text-center">
-          Developed by <span className="font-bold">Jose Boschero</span>
+          Developed by <a target="_blank" href="https://github.com/joseboschero" className="font-bold cursor-pointer transition-all hover:text-lg">Jose Boschero</a>
         </footer>
       </aside>
-      <main className="bg-gray-950">
+      <main className="bg-gray-900">
         <section className="max-w-5xl w-full mx-auto p-10">
           {step === STEPS.LOADING && (
             <div role="status" className="flex items-center justify-center">
@@ -122,6 +132,7 @@ export default function Home() {
               <DragAndDrop transformImageToCode={transformImageToCode} />
               <h1 className="text-center text-4xl my-4 text-gray-500">OR</h1>
               <Form transformUrlToCode={transformUrlToCode} />
+              <h1 className="text-sm text-gray-400">If is not working, it's probably because my account doesn't have credits to use the openai api.</h1>
             </div>
           )}
           {step === STEPS.PREVIEW && (
