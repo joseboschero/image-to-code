@@ -24,7 +24,7 @@ Return first the background hexadecimals, put a ||| separator, and then all the 
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.`;
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: 'My API Key',
 });
 
 export const runtime = "edge";
